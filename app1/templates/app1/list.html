@@ -1,0 +1,20 @@
+{% extends "layouts/base.html" %}  
+{% load static %}  
+{% block title %}Game Page{% endblock title %}
+{% block content %} 
+
+<body>
+    <h2><B>list of games</B><h2>
+    <ul>
+        {% for g in game %}
+        <li>
+            <B>Title of the game:</B> {{ g.title }}<br>
+            <B>the developer:</B> {{ g.developer.name }}
+        </li>
+        {% empty %}
+        <p>there is no gamesw</p>
+        {% endfor %}
+    </ul>
+</body>
+    
+{% endblock content %}
